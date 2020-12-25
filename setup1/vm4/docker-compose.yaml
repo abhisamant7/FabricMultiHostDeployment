@@ -4,8 +4,8 @@ networks:
   test:
 
 services:
-  orderer.example.com:
-    container_name: orderer.example.com
+  dfarmorderer.com:
+    container_name: dfarmorderer.com
     image: hyperledger/fabric-orderer:2.1
     dns_search: .
     environment:
@@ -36,11 +36,11 @@ services:
       - test
     volumes:
       - ../../artifacts/channel/genesis.block:/var/hyperledger/orderer/genesis.block
-      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
-      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls:/var/hyperledger/orderer/tls
+      - ./crypto-config/ordererOrganizations/dfarmorderer.com/orderers/dfarmorderer.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/dfarmorderer.com/orderers/dfarmorderer.com/tls:/var/hyperledger/orderer/tls
 
-  orderer2.example.com:
-    container_name: orderer2.example.com
+  orderer2.dfarmorderer.com:
+    container_name: orderer2.dfarmorderer.com
     image: hyperledger/fabric-orderer:2.1
     dns_search: .
     environment:
@@ -71,12 +71,12 @@ services:
       - test
     volumes:
       - ../../artifacts/channel/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/msp:/var/hyperledger/orderer/msp
-      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls:/var/hyperledger/orderer/tls
+      - ./crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer2.dfarmorderer.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer2.dfarmorderer.com/tls:/var/hyperledger/orderer/tls
 
 
-  orderer3.example.com:
-    container_name: orderer3.example.com
+  orderer3.dfarmorderer.com:
+    container_name: orderer3.dfarmorderer.com
     image: hyperledger/fabric-orderer:2.1
     dns_search: .
     environment:
@@ -107,5 +107,5 @@ services:
       - test
     volumes:
       - ../../artifacts/channel/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/msp:/var/hyperledger/orderer/msp
-      - ./crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls:/var/hyperledger/orderer/tls
+      - ./crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer3.dfarmorderer.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer3.dfarmorderer.com/tls:/var/hyperledger/orderer/tls
