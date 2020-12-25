@@ -192,8 +192,8 @@ chaincodeQuery() {
 # packageChaincode
  # installChaincode
 # queryInstalled
- approveForMyOrg1
-# checkCommitReadyness
+#  approveForMyOrg1
+checkCommitReadyness
 # approveForMyOrg2
 # checkCommitReadyness
 # commitChaincodeDefination
