@@ -4,6 +4,7 @@ export PEER0_ORG2_CA=${PWD}/crypto-config/peerOrganizations/yngadmin.com/peers/p
 export FABRIC_CFG_PATH=${PWD}/../../artifacts/channel/config/
 
 export CHANNEL_NAME=yngchannel
+export PACKAGE_ID=yngchaincode_1:ed37380be54dfb3d64861201931847bb322a6d7e2627ab89ad72f3991bfdf47c
 
 setGlobalsForPeer0Org2() {
     export CORE_PEER_LOCALMSPID="YngadminMSP"
