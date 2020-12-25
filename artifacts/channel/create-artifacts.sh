@@ -13,7 +13,7 @@ rm -rf ../../channel-artifacts/*
 # System channel
 SYS_CHANNEL="sys-channel"
 
-# channel name defaults to "Yngchannel"
+# channel name defaults to "yngchannel"
 CHANNEL_NAME="yngchannel"
 
 echo $CHANNEL_NAME
@@ -23,10 +23,10 @@ configtxgen -profile OrdererGenesis -configPath . -channelID $SYS_CHANNEL  -outp
 
 
 # Generate channel configuration block
-configtxgen -profile Yngchannel -configPath . -outputCreateChannelTx ./yngchannel.tx -channelID $CHANNEL_NAME
+configtxgen -profile yngchannel -configPath . -outputCreateChannelTx ./yngchannel.tx -channelID $CHANNEL_NAME
 
 echo "#######    Generating anchor peer update for DfarmadminMSP  ##########"
-configtxgen -profile Yngchannel -configPath . -outputAnchorPeersUpdate ./DfarmadminMSPanchors.tx -channelID $CHANNEL_NAME -asOrg DfarmadminMSP
+configtxgen -profile yngchannel -configPath . -outputAnchorPeersUpdate ./DfarmadminMSPanchors.tx -channelID $CHANNEL_NAME -asOrg DfarmadminMSP
 
 echo "#######    Generating anchor peer update for YngadminMSP  ##########"
-configtxgen -profile Yngchannel -configPath . -outputAnchorPeersUpdate ./YngadminMSPanchors.tx -channelID $CHANNEL_NAME -asOrg YngadminMSP
+configtxgen -profile yngchannel -configPath . -outputAnchorPeersUpdate ./YngadminMSPanchors.tx -channelID $CHANNEL_NAME -asOrg YngadminMSP
