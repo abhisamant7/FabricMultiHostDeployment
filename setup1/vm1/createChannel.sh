@@ -43,7 +43,7 @@ joinChannel(){
 
 }
 
-joinChannel
+# joinChannel
 
 updateAnchorPeers(){
     setGlobalsForPeer0Dfarmadmin
@@ -52,7 +52,7 @@ updateAnchorPeers(){
 
 }
 
-# updateAnchorPeers
+updateAnchorPeers
 
 # removeOldCrypto
 
