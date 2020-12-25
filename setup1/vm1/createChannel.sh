@@ -20,7 +20,7 @@ setGlobalsForPeer1Dfarmadmin(){
 }
 
 createChannel(){
-    rm -rf ./channel-artifacts/*
+    # rm -rf ./channel-artifacts/*
     setGlobalsForPeer0Dfarmadmin
 
     # Replace localhost with your orderer's vm IP address
