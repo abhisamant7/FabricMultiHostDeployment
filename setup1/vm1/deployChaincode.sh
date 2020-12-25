@@ -40,7 +40,7 @@ setGlobalsForPeer1Org1() {
 
 presetup() {
     echo Vendoring Go dependencies ...
-    pushd ./../../artifacts/src/github.com/fabcar/go
+    pushd ./../../artifacts/src/github.com/fabcar/goproducesc
     GO111MODULE=on go mod vendor
     popd
     echo Finished vendoring Go dependencies
