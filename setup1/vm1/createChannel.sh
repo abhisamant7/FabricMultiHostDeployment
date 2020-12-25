@@ -30,7 +30,7 @@ createChannel(){
     --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
 }
 
-createChannel
+# createChannel
 
 
 
@@ -43,7 +43,7 @@ joinChannel(){
 
 }
 
-# joinChannel
+joinChannel
 
 updateAnchorPeers(){
     setGlobalsForPeer0Dfarmadmin
