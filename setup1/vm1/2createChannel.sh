@@ -3,7 +3,7 @@ export ORDERER_CA=${PWD}/../vm4/crypto-config/ordererOrganizations/dfarmorderer.
 export PEER0_Dfarmadmin_CA=${PWD}/crypto-config/peerOrganizations/dfarmadmin.com/peers/peer0.dfarmadmin.com/tls/ca.crt
 export FABRIC_CFG_PATH=${PWD}/../../artifacts/channel/config/
 
-export CHANNEL_NAME=demoChannel
+export CHANNEL_NAME=demochannel
 
 setGlobalsForPeer0Dfarmadmin(){
     export CORE_PEER_LOCALMSPID="DfarmadminMSP"
