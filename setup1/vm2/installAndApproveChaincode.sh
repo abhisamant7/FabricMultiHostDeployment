@@ -33,8 +33,8 @@ presetup() {
 CHANNEL_NAME="yngchannel"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
-CC_SRC_PATH="./../../artifacts/src/github.com/fabcar/go"
-CC_NAME="fabcar"
+CC_SRC_PATH="./../../artifacts/src/github.com/Chaincode/gochaincode/goproducesc"
+CC_NAME="yngchaincode"
 
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
