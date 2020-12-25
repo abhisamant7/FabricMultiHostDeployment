@@ -190,8 +190,8 @@ chaincodeQuery() {
 
 # packageChaincode
  # installChaincode
-queryInstalled
-# approveForMyOrg1
+# queryInstalled
+ approveForMyOrg1
 # checkCommitReadyness
 # approveForMyOrg2
 # checkCommitReadyness
