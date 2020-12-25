@@ -48,7 +48,7 @@ joinChannel(){
 updateAnchorPeers(){
     setGlobalsForPeer0Dfarmadmin
     # Replace localhost with your orderer's vm IP address
-    peer channel update -o localhost:7050 --ordererTLSHostnameOverride dfarmorderer.com -c $CHANNEL_NAME -f ./../../artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
+    peer channel update -o 3.87.212.137:7050 --ordererTLSHostnameOverride dfarmorderer.com -c $CHANNEL_NAME -f ./../../artifacts/channel/${CORE_PEER_LOCALMSPID}anchors.tx --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
 
 }
 
