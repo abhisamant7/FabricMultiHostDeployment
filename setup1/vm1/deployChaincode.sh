@@ -51,7 +51,7 @@ CHANNEL_NAME="yngchannel"
 CC_RUNTIME_LANGUAGE="golang"
 VERSION="1"
 CC_SRC_PATH="./../../artifacts/src/github.com/Chaincode/gochaincode/goproducesc"
-CC_NAME="fabcar"
+CC_NAME="yngchaincode"
 
 packageChaincode() {
     rm -rf ${CC_NAME}.tar.gz
@@ -188,8 +188,8 @@ chaincodeQuery() {
 # Run this function if you add any new dependency in chaincode
  # presetup
 
-# packageChaincode
- installChaincode
+ packageChaincode
+# installChaincode
 # queryInstalled
 # approveForMyOrg1
 # checkCommitReadyness
