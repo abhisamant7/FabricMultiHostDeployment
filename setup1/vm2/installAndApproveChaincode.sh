@@ -44,7 +44,7 @@ packageChaincode() {
         --label ${CC_NAME}_${VERSION}
     echo "===================== Chaincode is packaged on peer0.org2 ===================== "
 }
- packageChaincode
+#  packageChaincode
 
 installChaincode() {
     setGlobalsForPeer0Org2
@@ -53,7 +53,7 @@ installChaincode() {
 
 }
 
-# installChaincode
+installChaincode
 
 queryInstalled() {
     setGlobalsForPeer0Org2
