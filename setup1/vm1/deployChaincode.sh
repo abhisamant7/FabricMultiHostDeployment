@@ -6,6 +6,7 @@ export FABRIC_CFG_PATH=${PWD}/../../artifacts/channel/config/
 
 
 export CHANNEL_NAME=yngchannel
+export PACKAGE_ID=yngchaincode_1:ed37380be54dfb3d64861201931847bb322a6d7e2627ab89ad72f3991bfdf47c
 
 setGlobalsForPeer0Org1() {
     export CORE_PEER_LOCALMSPID="DfarmadminMSP"
@@ -72,14 +73,14 @@ installChaincode() {
 
 # installChaincode
 
-queryInstalled() {
-    setGlobalsForPeer0Org1
-    peer lifecycle chaincode queryinstalled >&log.txt
-    cat log.txt
-    PACKAGE_ID=$(sed -n "/${CC_NAME}_${VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" log.txt)
-    echo PackageID is ${PACKAGE_ID}
-    echo "===================== Query installed successful on peer0.org1 on channel ===================== "
-}
+# queryInstalled() {
+#     setGlobalsForPeer0Org1
+#     peer lifecycle chaincode queryinstalled >&log.txt
+#     cat log.txt
+#     PACKAGE_ID=$(sed -n "/${CC_NAME}_${VERSION}/{s/^Package ID: //; s/, Label:.*$//; p;}" log.txt)
+#     echo PackageID is ${PACKAGE_ID}
+#     echo "===================== Query installed successful on peer0.org1 on channel ===================== "
+# }
 
 # queryInstalled
 
