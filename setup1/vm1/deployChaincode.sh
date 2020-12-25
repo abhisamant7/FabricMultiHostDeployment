@@ -189,11 +189,11 @@ chaincodeQuery() {
 # Run this function if you add any new dependency in chaincode
  # presetup
 
-# packageChaincode
+packageChaincode
  # installChaincode
 # queryInstalled
 #  approveForMyOrg1
-checkCommitReadyness
+# checkCommitReadyness
 # approveForMyOrg2
 # checkCommitReadyness
 # commitChaincodeDefination
