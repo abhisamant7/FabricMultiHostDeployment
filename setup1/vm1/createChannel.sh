@@ -30,18 +30,8 @@ createChannel(){
     --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
 }
 
-# createChannel
+createChannel
 
-fetchChannel(){
-    # rm -rf ./channel-artifacts/*
-    setGlobalsForPeer0Dfarmadmin
-
-    # Replace localhost with your orderer's vm IP address
-    peer channel create -o 3.87.212.137:7050 -c $CHANNEL_NAME \
-    --ordererTLSHostnameOverride dfarmorderer.com \
-    --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
-}
-fetchChannel
 
 
 joinChannel(){
