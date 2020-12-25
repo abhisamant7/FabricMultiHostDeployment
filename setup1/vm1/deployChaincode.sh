@@ -189,8 +189,8 @@ chaincodeQuery() {
  # presetup
 
 # packageChaincode
- installChaincode
-# queryInstalled
+ # installChaincode
+queryInstalled
 # approveForMyOrg1
 # checkCommitReadyness
 # approveForMyOrg2
