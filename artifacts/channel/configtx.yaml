@@ -3,7 +3,7 @@ Organizations:
     - &OrdererOrg
         Name: OrdererOrg
         ID: OrdererMSP
-        MSPDir: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/msp
+        MSPDir: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/msp
 
         Policies:
             Readers:
@@ -16,78 +16,78 @@ Organizations:
                 Type: Signature
                 Rule: "OR('OrdererMSP.admin')"
 
-    - &Org1
-        Name: Org1MSP
-        ID: Org1MSP
+    - &Dfarmadmin
+        Name: DfarmadminMSP
+        ID: DfarmadminMSP
 
-        MSPDir: ../../setup1/vm1/crypto-config/peerOrganizations/org1.example.com/msp
+        MSPDir: ../../setup1/vm1/crypto-config/peerOrganizations/dfarmadmin.com/msp
 
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.peer', 'Org1MSP.client')"
+                Rule: "OR('DfarmadminMSP.admin', 'DfarmadminMSP.peer', 'DfarmadminMSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin', 'Org1MSP.client')"
+                Rule: "OR('DfarmadminMSP.admin', 'DfarmadminMSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('Org1MSP.admin')"
+                Rule: "OR('DfarmadminMSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('Org1MSP.peer')"
+                Rule: "OR('DfarmadminMSP.peer')"
 
         AnchorPeers:
-            - Host: peer0.org1.example.com
+            - Host: peer0.dfarmadmin.com
               Port: 7051
 
-    - &Org2
-        Name: Org2MSP
+    - &Yngadmin
+        Name: YngadminMSP
 
-        ID: Org2MSP
+        ID: YngadminMSP
 
-        MSPDir: ../../setup1/vm2/crypto-config/peerOrganizations/org2.example.com/msp
+        MSPDir: ../../setup1/vm2/crypto-config/peerOrganizations/yngadmin.com/msp
 
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('Org2MSP.admin', 'Org2MSP.peer', 'Org2MSP.client')"
+                Rule: "OR('YngadminMSP.admin', 'YngadminMSP.peer', 'YngadminMSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('Org2MSP.admin', 'Org2MSP.client')"
+                Rule: "OR('YngadminMSP.admin', 'YngadminMSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('Org2MSP.admin')"
+                Rule: "OR('YngadminMSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('Org2MSP.peer')"
+                Rule: "OR('YngadminMSP.peer')"
 
         AnchorPeers:
-            - Host: peer0.org2.example.com
+            - Host: peer0.yngadmin.com
               Port: 9051
 
-    - &Org3
-        Name: Org3MSP
+    - &Dfarmdemo
+        Name: DfarmdemoMSP
 
-        ID: Org3MSP
+        ID: DfarmdemoMSP
 
-        MSPDir: ../../setup1/vm3/crypto-config/peerOrganizations/org3.example.com/msp
+        MSPDir: ../../setup1/vm3/crypto-config/peerOrganizations/dfarmdemo.com/msp
 
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('Org3MSP.admin', 'Org3MSP.peer', 'Org3MSP.client')"
+                Rule: "OR('DfarmdemoMSP.admin', 'DfarmdemoMSP.peer', 'DfarmdemoMSP.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('Org3MSP.admin', 'Org3MSP.client')"
+                Rule: "OR('DfarmdemoMSP.admin', 'DfarmdemoMSP.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('Org3MSP.admin')"
+                Rule: "OR('DfarmdemoMSP.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('Org3MSP.peer')"
+                Rule: "OR('DfarmdemoMSP.peer')"
 
         AnchorPeers:
-            - Host: peer0.org3.example.com
+            - Host: peer0.dfarmdemo.com
               Port: 11051
 
 Capabilities:
@@ -113,13 +113,13 @@ Application: &ApplicationDefaults
             Rule: "ANY Writers"
         Admins:
             Type: ImplicitMeta
-            Rule: "MAJORITY Admins"
+            Rule: "ANY Admins"
         LifecycleEndorsement:
             Type: ImplicitMeta
-            Rule: "MAJORITY Endorsement"
+            Rule: "ANY Endorsement"
         Endorsement:
             Type: ImplicitMeta
-            Rule: "MAJORITY Endorsement"
+            Rule: "ANY Endorsement"
 
     Capabilities:
         <<: *ApplicationCapabilities
@@ -130,12 +130,12 @@ Orderer: &OrdererDefaults
 
     EtcdRaft:
         Consenters:
-        - Host: orderer.example.com
+        - Host: dfarmorderer.com
           Port: 7050
-          ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
-          ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+          ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/dfarmorderer.com/tls/server.crt
+          ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/dfarmorderer.com/tls/server.crt
     Addresses:
-        - orderer.example.com:7050
+        - dfarmorderer.com:7050
 
     BatchTimeout: 2s
     BatchSize:
@@ -153,7 +153,7 @@ Orderer: &OrdererDefaults
             Rule: "ANY Writers"
         Admins:
             Type: ImplicitMeta
-            Rule: "MAJORITY Admins"
+            Rule: "ANY Admins"
         BlockValidation:
             Type: ImplicitMeta
             Rule: "ANY Writers"
@@ -168,25 +168,34 @@ Channel: &ChannelDefaults
             Rule: "ANY Writers"
         Admins:
             Type: ImplicitMeta
-            Rule: "MAJORITY Admins"
+            Rule: "ANY Admins"
 
     Capabilities:
         <<: *ChannelCapabilities
 
 Profiles:
 
-    BasicChannel:
-        Consortium: SampleConsortium
+    yngchannel:
+        Consortium: dfarmConsortium
         <<: *ChannelDefaults
         Application:
             <<: *ApplicationDefaults
             Organizations:
-                - *Org1
-                - *Org2
-                - *Org3
+                - *Dfarmadmin
+                - *Yngadmin
             Capabilities:
                 <<: *ApplicationCapabilities
 
+    demoChannel:
+        Consortium: dfarmConsortium
+        <<: *ChannelDefaults
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - *Dfarmadmin
+                - *Dfarmdemo
+            Capabilities:
+                <<: *ApplicationCapabilities
     OrdererGenesis:
         <<: *ChannelDefaults
         Capabilities:
@@ -196,30 +205,30 @@ Profiles:
             OrdererType: etcdraft
             EtcdRaft:
                 Consenters:
-                - Host: orderer.example.com
+                - Host: dfarmorderer.com
                   Port: 7050
-                  ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
-                  ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
-                - Host: orderer2.example.com
+                  ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/dfarmorderer.com/tls/server.crt
+                  ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/dfarmorderer.com/tls/server.crt
+                - Host: orderer2.dfarmorderer.com
                   Port: 8050
-                  ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
-                  ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
-                - Host: orderer3.example.com
+                  ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer2.dfarmorderer.com/tls/server.crt
+                  ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer2.dfarmorderer.com/tls/server.crt
+                - Host: orderer3.dfarmorderer.com
                   Port: 9050
-                  ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
-                  ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
+                  ClientTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer3.dfarmorderer.com/tls/server.crt
+                  ServerTLSCert: ../../setup1/vm4/crypto-config/ordererOrganizations/dfarmorderer.com/orderers/orderer3.dfarmorderer.com/tls/server.crt
             Addresses:
-                - orderer.example.com:7050
-                - orderer2.example.com:8050
-                - orderer3.example.com:9050
+                - dfarmorderer.com:7050
+                - orderer2.dfarmorderer.com:8050
+                - orderer3.dfarmorderer.com:9050
 
             Organizations:
             - *OrdererOrg
             Capabilities:
                 <<: *OrdererCapabilities
         Consortiums:
-            SampleConsortium:
+            dfarmConsortium:
                 Organizations:
-                - *Org1
-                - *Org2
-                - *Org3
+                - *Dfarmadmin
+                - *Yngadmin
+                - *Dfarmdemo
